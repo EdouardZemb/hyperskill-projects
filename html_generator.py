@@ -6,19 +6,22 @@ def generate_gamification_html(total_topics, learned_topics):
     # Calculate the difference between total topics and learned topics
     difference = total_topics - learned_topics
 
-    # Generate small squares to indicate topics progress
-    topics_squares = ""
-    for _ in range(learned_topics):
-        topics_squares += '<span class="square-green"></span>'
-    for _ in range(difference):
-        topics_squares += '<span class="square-grey"></span>'
+    # Define image URLs for green and grey squares
+    green_square_img = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Solid_green.svg/240px-Solid_green.svg.png"
+    grey_square_img = "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Grey_Square.svg/240px-Grey_Square.svg.png"
 
-    gamification_html = f"""
-<div class="topics-progress">
-    <h2>Topics Progress</h2>
-    {topics_squares}
-</div>
-"""
+    # Generate images to indicate topics progress
+    topics_progress = []
+    for _ in range(learned_topics):
+        topics_progress.append(f'<img src="{green_square_img}" alt="Green Square" width="15"/>')
+    for _ in range(difference):
+        topics_progress.append(f'<img src="{grey_square_img}" alt="Grey Square" width="15"/>')
+
+    # Join the images into a single string
+    topics_progress_html = " ".join(topics_progress)
+
+    gamification_html = f"{topics_progress_html}"
+
     return gamification_html
 
 
