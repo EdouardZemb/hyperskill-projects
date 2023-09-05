@@ -1,7 +1,9 @@
-# Function to generate gamification HTML
+import os
+
 from data_fetcher import get_track_progresses
 
 
+# Function to generate gamification HTML
 def generate_gamification_html(total_topics, learned_topics):
     # Calculate the difference between total topics and learned topics
     difference = total_topics - learned_topics
@@ -34,6 +36,15 @@ def generate_track_readme_content(user_data, track_data):
     projects_count = len(track_data.get("projects"))
     cover_url = track_data.get("cover")
 
+    if not os.path.exists("tracks"):
+        os.mkdir("tracks")
+
+    folder_path = os.path.join("tracks", track_title)
+
+    # Check if a folder for the track exists
+    if not os.path.exists(folder_path):
+        os.mkdir(folder_path)
+
     progress_topics = track_progress.get("learned_topics_count")
     progress_projects = len(track_progress.get("completed_projects"))
 
@@ -45,7 +56,7 @@ def generate_track_readme_content(user_data, track_data):
     cover_image_html = f'<img src="{cover_url}" alt="Track Cover" width="50">'
 
     readme_content = f"""
-### {cover_image_html} {track_title}
+### {cover_image_html} [{track_title}]({folder_path})
 
 #### Description
 {track_description}
