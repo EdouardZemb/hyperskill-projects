@@ -82,10 +82,6 @@ Welcome to my Hyperskill Projects Repository! This repository serves as a centra
 
 In this repository, you will find a collection of project folders, each corresponding to a project I've worked on as part of my learning journey on Hyperskill. Each project folder contains detailed information about the project, including its purpose, key features, and how to build and run it.
 
-<head>
-    <link rel="stylesheet" type="text/css" href="style.css">
-</head>
-
 {track_readme_content}
 
 ## License
