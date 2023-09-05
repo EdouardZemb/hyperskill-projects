@@ -45,20 +45,20 @@ def generate_track_readme_content(user_data, track_data):
     cover_image_html = f'<img src="{cover_url}" alt="Track Cover" width="50">'
 
     readme_content = f"""
-## {cover_image_html} {track_title}
+### {cover_image_html} {track_title}
 
-### Description
+#### Description
 {track_description}
 
-### Progress
+#### Progress
 - Topics completion: **{percentage_topics_completion:.2f}%**
 
 {generate_gamification_html(topics_count, progress_topics)}
 
 - Projects completion: **{percentage_projects_completion:.2f}%**
 
-### Total Topics: {topics_count}
-### Total Projects: {projects_count}
+- Total Topics: {topics_count}
+- Total Projects: {projects_count}
 """
 
     return readme_content
