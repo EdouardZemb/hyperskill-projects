@@ -42,7 +42,7 @@ def generate_track_readme_content(user_data, track_data):
     percentage_projects_completion = (progress_projects / projects_count) * 100
 
     # Style the cover image with a fixed size
-    cover_image_html = f'<img src="{cover_url}" alt="Track Cover" class="cover-image">'
+    cover_image_html = f'<img src="{cover_url}" alt="Track Cover" width="50">'
 
     readme_content = f"""
 ## {cover_image_html} {track_title}
@@ -51,10 +51,11 @@ def generate_track_readme_content(user_data, track_data):
 {track_description}
 
 ### Progress
+- Topics completion: **{percentage_topics_completion:.2f}%**
+
 {generate_gamification_html(topics_count, progress_topics)}
 
-- Percentage Completion of Topics: {percentage_topics_completion:.2f}%
-- Percentage Completion of Projects: {percentage_projects_completion:.2f}%
+- Projects completion: **{percentage_projects_completion:.2f}%**
 
 ### Total Topics: {topics_count}
 ### Total Projects: {projects_count}
