@@ -1,4 +1,4 @@
-name: Automate Script
+name: Automate README Update Script
 
 on:
   push:
@@ -31,5 +31,5 @@ jobs:
         git config --global user.name "GitHub Actions"
         git config --global user.email "actions@github.com"
         git add .
-        git commit -m "Automated script execution"
+        git commit -m "Automated README.md update"
         git push
