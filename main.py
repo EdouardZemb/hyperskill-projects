@@ -1,5 +1,4 @@
 import sys
-import json
 from data_fetcher import (
     get_user_data,
     get_track_list,
@@ -10,47 +9,14 @@ from data_fetcher import (
 from html_generator import generate_track_readme_content
 from file_writer import write_to_output
 from logging_singleton import LoggingSingleton
-
-CONFIG_FILE = "config.json"
-
-
-def read_config(filename):
-    """
-    Reads configuration from a JSON file.
-
-    Args:
-        filename (str): The path to the JSON configuration file.
-
-    Returns:
-        dict: The configuration data.
-
-    Raises:
-        FileNotFoundError: If the configuration file is not found.
-        json.JSONDecodeError: If there is an error parsing the JSON configuration.
-    """
-    try:
-        with open(filename, "r") as config_file:
-            config = json.load(config_file)
-        return config
-    except FileNotFoundError:
-        LoggingSingleton().error(f"Configuration file '{filename}' not found.")
-        sys.exit(f"Configuration file '{filename}' not found. Please ensure it exists.")
-    except json.JSONDecodeError:
-        LoggingSingleton().error(f"Error parsing configuration file '{filename}'. Please ensure it's valid JSON.")
-        sys.exit(f"Error parsing configuration file '{filename}'. Please ensure it's valid JSON.")
+from config_reader import OUTPUT_FILE, USER_ID
 
 
 # Main execution
 if __name__ == "__main__":
-    # Read configuration from the JSON file
-    config = read_config(CONFIG_FILE)
-    user_id = config.get("user_id")
-    api_url = config.get("api_url")
-    output_file = config.get("output_file")
-
     try:
         # Fetch user data and track list from Hyperskill API
-        user_data = get_user_data(user_id)
+        user_data = get_user_data(USER_ID)
         track_list = get_track_list()
 
         track_readme_content = ""
@@ -94,8 +60,8 @@ Happy coding!
 """
 
         # Write the generated content to the README file
-        write_to_output(full_readme_content, output_file)
-        print(f"README file generated successfully and saved to '{output_file}'")
+        write_to_output(full_readme_content, OUTPUT_FILE)
+        print(f"README file generated successfully and saved to '{OUTPUT_FILE}'")
 
     except FetchDataError as api_error:
         LoggingSingleton().error(f"Error fetching data from the Hyperskill API: {api_error}")

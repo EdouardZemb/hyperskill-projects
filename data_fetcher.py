@@ -1,7 +1,6 @@
 import coreapi
 from logging_singleton import LoggingSingleton
-
-API_URL = "https://hyperskill.org/api/docs/"
+from config_reader import API_URL
 
 
 def fetch_data(action, params=None):
