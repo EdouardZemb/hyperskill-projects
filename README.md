@@ -8,7 +8,7 @@ In this repository, you will find a collection of project folders, each correspo
 
 ## Tracks
 
-### <img src="https://hs.azureedge.net/media/tracks/736e555ccad845509277f25fb451601c/java.svg" alt="Track Cover" width="50"> Introduction to Java
+### <img src="https://hs.azureedge.net/media/tracks/736e555ccad845509277f25fb451601c/java.svg" alt="Track Cover" width="50"> [Introduction to Java](tracks/Introduction to Java)
 
 #### Description
 Ready to step into the Java world? Explore syntax, integer manipulation, string and array operations, loops, conditions, and object-oriented programming concepts.
@@ -23,7 +23,7 @@ Ready to step into the Java world? Explore syntax, integer manipulation, string 
 - Total Topics: 94
 - Total Projects: 9
 
-### <img src="https://hs.azureedge.net/media/tracks/0806f26d99824db59822d36f062c4dc0/java.svg" alt="Track Cover" width="50"> Java Desktop Application Developer
+### <img src="https://hs.azureedge.net/media/tracks/0806f26d99824db59822d36f062c4dc0/java.svg" alt="Track Cover" width="50"> [Java Desktop Application Developer](tracks/Java Desktop Application Developer)
 
 #### Description
 Expand your knowledge of Java and create a real application with a Swing framework. This track is #1 if you strive to become a master of desktop app development.
@@ -38,7 +38,7 @@ Expand your knowledge of Java and create a real application with a Swing framewo
 - Total Topics: 263
 - Total Projects: 32
 
-### <img src="https://hs.azureedge.net/media/tracks/8e876ff2f8d84b79889e4bad887a7602/java.svg" alt="Track Cover" width="50"> Java Backend Developer
+### <img src="https://hs.azureedge.net/media/tracks/8e876ff2f8d84b79889e4bad887a7602/java.svg" alt="Track Cover" width="50"> [Java Backend Developer](tracks/Java Backend Developer)
 
 #### Description
 Become a Java Backend Developer and unlock the world of web application development with Spring Boot! Master Java fundamentals, object-oriented programming, and data storage.
@@ -53,7 +53,7 @@ Become a Java Backend Developer and unlock the world of web application developm
 - Total Topics: 367
 - Total Projects: 27
 
-### <img src="https://hs.azureedge.net/media/tracks/25f664b3de52492faf37b9051993c734/java_1.svg" alt="Track Cover" width="50"> Java Core
+### <img src="https://hs.azureedge.net/media/tracks/25f664b3de52492faf37b9051993c734/java_1.svg" alt="Track Cover" width="50"> [Java Core](tracks/Java Core)
 
 #### Description
 This track deals with the standard Java tools that allow you to solve algorithmic problems or design math models. Choose this track to work with non-trivial and complex projects!
@@ -68,7 +68,7 @@ This track deals with the standard Java tools that allow you to solve algorithmi
 - Total Topics: 259
 - Total Projects: 31
 
-### <img src="https://hs.azureedge.net/media/tracks/0b296d6d438041dfa2572b9c25742be0/java.svg" alt="Track Cover" width="50"> Java Developer
+### <img src="https://hs.azureedge.net/media/tracks/0b296d6d438041dfa2572b9c25742be0/java.svg" alt="Track Cover" width="50"> [Java Developer](tracks/Java Developer)
 
 #### Description
 Start your Java programming adventure by learning essential backend development skills, including working with databases, handling HTTP requests, and understanding data formats.
