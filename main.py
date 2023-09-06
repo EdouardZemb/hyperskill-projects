@@ -1,5 +1,4 @@
 import sys
-import logging
 import json
 from data_fetcher import (
     get_user_data,
@@ -10,11 +9,9 @@ from data_fetcher import (
 )
 from html_generator import generate_track_readme_content
 from file_writer import write_to_output
+from logging_singleton import LoggingSingleton
 
 CONFIG_FILE = "config.json"
-
-# Configure logging
-logging.basicConfig(filename='hyperskill.log', level=logging.ERROR, format='%(asctime)s - %(levelname)s - %(message)s')
 
 
 def read_config(filename):
@@ -36,10 +33,10 @@ def read_config(filename):
             config = json.load(config_file)
         return config
     except FileNotFoundError:
-        logging.error(f"Configuration file '{filename}' not found.")
+        LoggingSingleton().error(f"Configuration file '{filename}' not found.")
         sys.exit(f"Configuration file '{filename}' not found. Please ensure it exists.")
     except json.JSONDecodeError:
-        logging.error(f"Error parsing configuration file '{filename}'. Please ensure it's valid JSON.")
+        LoggingSingleton().error(f"Error parsing configuration file '{filename}'. Please ensure it's valid JSON.")
         sys.exit(f"Error parsing configuration file '{filename}'. Please ensure it's valid JSON.")
 
 
@@ -70,7 +67,7 @@ if __name__ == "__main__":
                         if track_progress.get("completed_projects"):
                             track_readme_content += generate_track_readme_content(user_data, track_data)
                     except FetchDataError as progress_error:
-                        logging.error(
+                        LoggingSingleton().error(
                             f"Error fetching progress data for track '{track_data.get('title')}': {progress_error}")
 
         # Combine all track content into the README
@@ -101,8 +98,8 @@ Happy coding!
         print(f"README file generated successfully and saved to '{output_file}'")
 
     except FetchDataError as api_error:
-        logging.error(f"Error fetching data from the Hyperskill API: {api_error}")
+        LoggingSingleton().error(f"Error fetching data from the Hyperskill API: {api_error}")
         sys.exit(f"Error fetching data from the Hyperskill API: {api_error}")
     except Exception as e:
-        logging.error(f"An unexpected error occurred: {e}")
+        LoggingSingleton().error(f"An unexpected error occurred: {e}")
         sys.exit(f"An unexpected error occurred: {e}")

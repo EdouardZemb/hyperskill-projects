@@ -1,8 +1,7 @@
 import coreapi
-import logging
+from logging_singleton import LoggingSingleton
 
 API_URL = "https://hyperskill.org/api/docs/"
-logger = logging.getLogger(__name__)
 
 
 def fetch_data(action, params=None):
@@ -25,7 +24,7 @@ def fetch_data(action, params=None):
         result = client.action(schema, action, params=params)
         return result
     except coreapi.exceptions.ErrorMessage as e:
-        logger.error(f"Error fetching data from API: {e}")
+        LoggingSingleton().error(f"Error fetching data from API: {e}")
         raise FetchDataError(f"Error fetching data from API: {e}")
 
 
