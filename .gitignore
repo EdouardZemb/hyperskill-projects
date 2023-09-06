@@ -1,1 +1,6 @@
 /hyperskill.log
+*.pyc
+__pycache__/
+.idea/
+/test.py
+```
