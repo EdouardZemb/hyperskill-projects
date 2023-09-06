@@ -39,7 +39,10 @@ def generate_track_readme_content(user_data, track_data):
     if not os.path.exists("tracks"):
         os.mkdir("tracks")
 
-    folder_path = os.path.join("tracks", track_title)
+    # Modify the track_title to lowercase and replace spaces with hyphens
+    normalized_track_title = track_title.lower().replace(" ", "-")
+
+    folder_path = os.path.join("tracks", normalized_track_title)
 
     # Check if a folder for the track exists
     if not os.path.exists(folder_path):
